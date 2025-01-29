@@ -36,7 +36,7 @@ public class EnableDisable : MonoBehaviour
         {
             if (click.isPlaying == false)
             {
-                //    //click.Play();
+                //click.Play();
                 click.PlayOneShot(clip);
             }
             
