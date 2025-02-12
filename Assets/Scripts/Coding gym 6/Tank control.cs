@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Tankcontrol : MonoBehaviour
 {
-    public Sprite Sprites;
+    public SpriteRenderer Sprites;
+    public Sprite changedSprite;
     public float speed;
     // Start is called before the first frame update
     void Start()
