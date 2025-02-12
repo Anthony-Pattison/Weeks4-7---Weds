@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Tankcontrol : MonoBehaviour
 {
+    public Sprite Sprites;
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,8 +17,20 @@ public class Tankcontrol : MonoBehaviour
     {
         Vector2 position = transform.position;
 
-        position.x += Input.GetAxis("Horizontal") * 5 * Time.deltaTime;
-        position.y += Input.GetAxis("Vertical") * 5 * Time.deltaTime;
+        position.x += Input.GetAxis("Horizontal") * speed * Time.deltaTime;
+        position.y += Input.GetAxis("Vertical") * speed * Time.deltaTime;
         transform.position = position;
+    }
+   public void Speedchange(float n)
+    {
+        speed = n;
+    }
+    public void changeSprite(bool change)
+    {
+
+        
+
+          
+        
     }
 }
