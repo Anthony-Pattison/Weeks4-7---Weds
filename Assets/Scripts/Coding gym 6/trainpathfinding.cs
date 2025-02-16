@@ -20,16 +20,30 @@ public class trainpathfinding : MonoBehaviour
     void Update()
     {
         Vector2 trainPosition = train.transform.position;
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < trainSpots.Count; i++)
         {
             Vector2 destination = trainSpots[i].transform.position;
-            trainSpots[i].transform.position = destination;
-            if (trainPosition.x > destination.x)
-            {
-                Debug.Log(trainSpots);
-                trainPosition.x = trainPosition.x - speed * Time.deltaTime;
-                train.transform.position = trainPosition;
+            
+                Debug.Log(i);
+                if (trainPosition.x > destination.x)
+                {
+                    trainPosition.x = trainPosition.x - speed * Time.deltaTime;
+                }
+                if (trainPosition.x < destination.x)
+                {
+                    trainPosition.x = trainPosition.x + speed * Time.deltaTime;
+                }
+                if (trainPosition.y > destination.y)
+                {
+                    trainPosition.y = trainPosition.y - speed * Time.deltaTime;
+                }
+                if (trainPosition.y < destination.y)
+                {
+                    trainPosition.y = trainPosition.y + speed * Time.deltaTime;
+                }
+            
+            train.transform.position = trainPosition;
+            
             }
-        }
     }
 }
