@@ -24,7 +24,7 @@ public class trainpathfinding : MonoBehaviour
 
         Vector2 destination = trainSpots[i].transform.position;
 
-        Debug.Log(i);
+       
 
         if (trainPosition.x > destination.x)
         {
