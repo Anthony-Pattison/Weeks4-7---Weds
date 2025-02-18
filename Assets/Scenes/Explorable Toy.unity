@@ -5014,7 +5014,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf9aed01ccd381e48845340c99b1d0bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SomokeSpriteRenderer: {fileID: 6250022689020301130, guid: 0cc7dd0da44fe914f88f8005f594fba3, type: 3}
   TrainSmokeprefab: {fileID: 504602571341880091, guid: 0cc7dd0da44fe914f88f8005f594fba3, type: 3}
+  SmokeList: []
 --- !u!1 &1610348005
 GameObject:
   m_ObjectHideFlags: 0
