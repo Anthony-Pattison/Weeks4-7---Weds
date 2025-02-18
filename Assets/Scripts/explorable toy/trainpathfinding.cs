@@ -1,10 +1,10 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
+
 using UnityEngine;
-using UnityEngine.Apple;
-using static UnityEditor.PlayerSettings;
+
+
 
 public class trainpathfinding : MonoBehaviour
 {
@@ -23,7 +23,8 @@ public class trainpathfinding : MonoBehaviour
 
         Vector2 destination = trainSpots[i].transform.position;
 
-       
+       // based on the placement of the destination the train will
+       // always movetowards it
         if (trainPosition.x > destination.x)
         {
             trainPosition.x -= speed * Time.deltaTime;
@@ -40,9 +41,13 @@ public class trainpathfinding : MonoBehaviour
         {
             trainPosition.y += speed * Time.deltaTime;
         }
-
+        // applys the movement to the train
         train.transform.position = trainPosition;
+    // this long assortment of if statements take the place of a for loop that didnt end up working
 
+    // the if statements takes the transform.position of game objects that are laid out ever turn on the tracks
+    // after the train makes it to one destination on the list it moves on to the next destination
+    // once the train gets to the end it rests to i == 1 which is the start of the pathfinding
         if (trainPosition.x <= destination.x + .10f && i == 0)
         {
             train.transform.eulerAngles = new Vector3(0, 0, 90);
@@ -95,6 +100,7 @@ public class trainpathfinding : MonoBehaviour
         }
         
     }
+    // uses a slider to change the speed of the train
     public void ChangeSpeed(float c)
     {
         speed = c;

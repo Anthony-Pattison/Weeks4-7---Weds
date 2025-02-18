@@ -17,6 +17,7 @@ public class Trainsoundeffect : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    // simple timer that plays a choochoo sound when completed
         timer++;
     if (timer > 2000)
         {
