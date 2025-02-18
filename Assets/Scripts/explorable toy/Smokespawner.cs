@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Smokespawner : MonoBehaviour
 {
     bool smokeOn;
     int i = 0;
     int smokeTransparency = 255;
-    public SpriteRenderer SomokeSpriteRenderer;
+    public Button smokeButton;
     public GameObject TrainSmokeprefab;
     public List<GameObject> SmokeList;
     GameObject newSomke;
@@ -21,7 +22,7 @@ public class Smokespawner : MonoBehaviour
     {
         if (smokeOn)
         {
-
+        smokeButton.GetComponent<Image>().color = Color.red;
             for (int i = 0; SmokeList.Count < 5; i++)
             {
 
